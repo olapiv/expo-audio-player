@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text, View } from 'react-native';
 import styles from './styles';
 import AudioSlider from './src/AudioSlider';
-import AudioFile from './src/counting.m4a';
+import AudioFile from './assets/counting.m4a';
 
 
 export default function App() {

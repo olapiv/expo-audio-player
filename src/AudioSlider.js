@@ -60,7 +60,7 @@ export default class AudioSlider extends PureComponent {
                     await this.state.dotOffset.setValue({ x:-this.state.xDotOffsetAtAnimationStart, y:0 });
                 }
                 await this.state.dotOffset.flattenOffset();
-                await this.mapSliderToAudio()
+                await this.mapAudioToCurrentTime()
             },
             onPanResponderRelease: async (e, {vx}) => {
                 const currentOffsetX = this.state.xDotOffsetAtAnimationStart + this.state.dotOffset.x._value;
@@ -68,13 +68,13 @@ export default class AudioSlider extends PureComponent {
                     await this.state.dotOffset.setValue({ x:-this.state.xDotOffsetAtAnimationStart, y:0 });
                 }
                 await this.state.dotOffset.flattenOffset();
-                await this.mapSliderToAudio()
+                await this.mapAudioToCurrentTime()
             }
         });
           
     };
 
-    mapSliderToAudio = async () => {
+    mapAudioToCurrentTime = async () => {
         await this.soundObject.setPositionAsync(this.state.currentTime);
     }
 

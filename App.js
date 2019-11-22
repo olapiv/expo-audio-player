@@ -1,19 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
+import styles from 'storyline_app/src/styles';
+import AudioSlider from './AudioSlider';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={[styles.StandardContainer, {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        marginTop: 5,
+        marginBottom: 5,
+        }]}>
+
+        <View style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            }}>
+
+            <Text style={[styles.StandardText, {flex: 5}]}>
+                Audio name
+            </Text>
+
+            <TouchableOpacity 
+                style={[{flex: 1}]}
+            >
+                <Text style={styles.StandardText}>Edit</Text>
+            </TouchableOpacity>
+            
+
+        </View>
+
+        <AudioSlider audio={this.props.audio}/>
+
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

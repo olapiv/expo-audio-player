@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import styles from 'storyline_app/src/styles'
+import styles from '../styles';
 
 
 export default class DigitalTimeString extends React.Component {

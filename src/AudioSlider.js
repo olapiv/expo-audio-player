@@ -8,9 +8,8 @@ import {
 } from "react-native";
 import { Audio } from 'expo-av';
 import { Entypo, MaterialIcons } from '@expo/vector-icons';
-import { sleep } from 'storyline_app/src/utils/sleep';
-import DigitalTimeString from 'storyline_app/src/screens/StoriesMenu/ScreenComponents/DigitalTimeString';
-// import AudioFile from 'storyline_app/src/31er.m4a';
+import sleep from './sleep';
+import DigitalTimeString from './DigitalTimeString';
 
 const TRACK_SIZE = 4;
 const THUMB_SIZE = 20;
@@ -129,7 +128,7 @@ export default class AudioSlider extends PureComponent {
 
     async componentDidMount() {
         this.soundObject = new Audio.Sound();
-        await this.soundObject.loadAsync({"uri": this.props.audio.file});
+        await this.soundObject.loadAsync(this.props.audio);
         const status = await this.soundObject.getStatusAsync();
         this.setState({ duration: status["durationMillis"] });
 
